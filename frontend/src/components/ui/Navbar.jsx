@@ -1,12 +1,13 @@
 import { IconContext } from "react-icons";
 import { BiMenu, BiX } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import logo from "/logo.png";
 
 import { useState } from "react";
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const menuItems = ["Beranda", "Donasi", "Volunteer", "Donasi & Volunteer"];
 
@@ -14,7 +15,7 @@ export default function NavigationBar() {
     <nav className="fixed top-0 w-full bg-primary-300 bg-opacity-20 backdrop-blur-lg z-50">
       <div className="flex items-center justify-between px-8 py-4 md:px-12 lg:px-20">
         <div>
-          <img src="" alt="Logo" className="w-20 lg:w-24" />
+          <img src={logo} alt="Logo" className="w-20 lg:w-24" />
         </div>
         <div className="hidden items-center md:flex md:gap-4 lg:gap-8">
           {menuItems.map((menuItem, index) => (
